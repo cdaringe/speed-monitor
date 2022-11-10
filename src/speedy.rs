@@ -117,6 +117,7 @@ impl From<Arc<Settings>> for SpeedTestOptions {
 mod test {
     use super::SpeedTestEvent;
 
+    #[test]
     pub fn test_deser() -> () {
         serde_json::ser::to_string(&SpeedTestEvent::default()).expect("deserialization");
     }
