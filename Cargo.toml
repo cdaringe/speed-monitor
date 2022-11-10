@@ -1,0 +1,22 @@
+[package]
+name = "speed-monitor"
+version = "0.1.0"
+edition = "2021"
+build = "build.rs"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+axum = "0.5.17"
+config = "0.13.1"
+dotenv = "0.15.0"
+fast-cli-core = "0.0.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "*"
+sqlx = { version = "0.6", features = [ "runtime-tokio-rustls", "sqlite" ] }
+tokio = { version = "1", features = ["full"] }
+tokio-cron-scheduler = "*"
+
+[build-dependencies]
+dotenv = "0.15.0"
+sqlx = { version = "0.6", features = [ "runtime-tokio-rustls", "sqlite" ] }
+tokio = "*"
