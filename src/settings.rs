@@ -32,8 +32,8 @@ impl Settings {
             true => Mode::Development,
             false => Mode::Production,
         };
-        let cron = env::var("CRON").unwrap_or_else(|_| "0 0 * * * *".into());
-        let db_url = env::var("DATABASE_URL").expect("DATABASE_URL missing");
+        let cron = env::var("CRON").unwrap_or_else(|_| "0 0 0 * * *".into());
+        let db_url = env::var("DATABASE_URL").unwrap_or("sqlite://speedy.db?mode=rwc".to_owned());
         Settings { mode, cron, db_url }
     }
 }

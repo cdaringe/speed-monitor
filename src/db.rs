@@ -17,9 +17,6 @@ impl Db {
 
     pub async fn migrate(&self) -> () {
         let mut pool = self.pool.acquire().await.unwrap();
-        sqlx::migrate!("db/migrations")
-            .run(&mut pool)
-            .await
-            .expect("migrations");
+        sqlx::migrate!().run(&mut pool).await.expect("migrations");
     }
 }
