@@ -4,7 +4,7 @@ Call `fast.com` speed test, store data in sqlite.
 
 ## Usage
 
-- `docker buildx build --platform linux/amd64 -t speedy .`
+- `docker buildx build --progress=plain --platform linux/amd64 -t speedy .`
   - you will have trouble building rust's c deps in musl on other arch
 - run the app
 
