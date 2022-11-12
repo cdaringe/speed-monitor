@@ -1,4 +1,4 @@
-FROM rust:alpine as build
+FROM rustlang/rust:nightly-alpine as build
 WORKDIR /app
 RUN apk add --no-cache libc-dev musl-dev
 COPY . .
