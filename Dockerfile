@@ -1,6 +1,6 @@
 FROM rust:alpine as build
 WORKDIR /app
-RUN apk add libc-dev
+RUN apk add libc-dev musl-dev
 COPY . .
 RUN ls -al && cargo install --jobs 1 --path .
 RUN echo $(which speed-monitor) && mv $(which speed-monitor) ./
